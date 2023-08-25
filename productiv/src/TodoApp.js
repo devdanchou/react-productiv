@@ -42,7 +42,7 @@ function TodoApp({ initialTodos }) {
   return (
     <main className="TodoApp">
       <div className="row">
-
+      <h3 className="mb-3">Todos</h3>
         <div className="col-md-6">
           {todos.length === 0
             ?
