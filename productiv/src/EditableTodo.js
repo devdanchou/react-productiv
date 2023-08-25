@@ -25,7 +25,7 @@ function EditableTodo({ todo, update, remove }) {
 
   /** Call remove fn passed to this. */
   function handleDelete() {
-    remove();
+    remove(todo.id);
   }
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
@@ -55,7 +55,7 @@ function EditableTodo({ todo, update, remove }) {
             id={todo.id}
             title={todo.title}
             description={todo.description}
-            priority={todo.description}
+            priority={todo.priority}
           />
         </div>
       }
