@@ -17,7 +17,7 @@ function EditableTodoList({ todos, update, remove }) {
       <ul>
         {todos.map(todo =>
           <li>
-            <EditableTodo update={update} remove={remove} />
+            <EditableTodo todo={todo} update={update} remove={remove} />
           </li>
         )}
       </ul>
