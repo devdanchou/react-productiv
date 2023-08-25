@@ -13,6 +13,7 @@ import React, { useState } from "react";
 function TodoForm({ initialFormData = {}, handleSave }) {
 
   const [formData, setFormData] = useState(initialFormData);
+  console.log("form data", formData);
 
   /** Update form input. */
   function handleChange(evt) {
@@ -26,7 +27,7 @@ function TodoForm({ initialFormData = {}, handleSave }) {
   /** Call parent function and clear form. */
   function handleSubmit(evt) {
     evt.preventDefault();
-    handleSave({...formData});
+    handleSave({ ...formData });
     setFormData({ title: "", description: "", priority: 1 });
   }
 

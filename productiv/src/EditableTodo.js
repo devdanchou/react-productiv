@@ -20,7 +20,7 @@ function EditableTodo({ todo, update, remove }) {
 
   /** Toggle if this is being edited */
   function toggleEdit() {
-    setIsEditing(!isEditing);
+    setIsEditing(curr => !curr);
   }
 
   /** Call remove fn passed to this. */
@@ -37,8 +37,9 @@ function EditableTodo({ todo, update, remove }) {
   return (
     <div className="EditableTodo">
 
-      {isEditing ? <TodoForm initialFormData={todo} handleSave={handleSave} /> :
-        <div className="mb-3">
+      {isEditing
+        ? <TodoForm initialFormData={todo} handleSave={handleSave} />
+        : <div className="mb-3">
           <div className="float-end text-sm-end">
             <button
               className="EditableTodo-toggle btn-link btn btn-sm"
@@ -52,10 +53,7 @@ function EditableTodo({ todo, update, remove }) {
             </button>
           </div>
           <Todo
-            id={todo.id}
-            title={todo.title}
-            description={todo.description}
-            priority={todo.priority}
+            todo={todo}
           />
         </div>
       }
